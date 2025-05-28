@@ -1,0 +1,69 @@
+.navbar {
+  background-color: variables.$color-bg;
+  font-family: $font-stack;
+  padding: $space-md;
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: $space-md;
+
+      li {
+        position: relative;
+
+        a {
+          color: $color-text;
+          text-decoration: none;
+          @include transition(color);
+          
+          &:hover {
+            color: $color-primary;
+          }
+        }
+
+        // Dropdown
+        .dropdown {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: $color-bg;
+          padding: $space-sm;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+          a {
+            display: block;
+            padding: $space-sm;
+          }
+        }
+
+        &:hover .dropdown {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include respond(phone) {
+    .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+// Button Variants
+.btn {
+  &--primary { @include button-style($color-primary, white); }
+  &--secondary { @include button-style($color-secondary, white); }
+  &--danger { @include button-style($color-danger, white); }
+}

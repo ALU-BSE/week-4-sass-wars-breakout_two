@@ -1,0 +1,18 @@
+/* Error: There is no module with the namespace "variables".
+ *   ,
+ * 2 |   background-color: variables.$color-bg;
+ *   |                     ^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   sass/_navbar.scss 2:21  @import
+ *   sass/main.scss 4:9      root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: There is no module with the namespace "variables".\a   \2577 \a 2 \2502    background-color: variables.$color-bg;\a   \2502                      ^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass/_navbar.scss 2:21  @import\a   sass/main.scss 4:9      root stylesheet';
+}
